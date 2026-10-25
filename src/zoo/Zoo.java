@@ -2,7 +2,6 @@ package zoo;
 
 import zoo.strategy.EnclosureStrategy;
 
-/** Context: knows only the EnclosureStrategy interface, never how a price is calculated. */
 public class Zoo {
 
     private EnclosureStrategy enclosure;
@@ -21,11 +20,7 @@ public class Zoo {
         this.size = size;
     }
 
-    public double enclosurePrice() {
+    public int getPrice() {
         return enclosure.calculatePrice(size);
-    }
-
-    public String describe() {
-        return String.format("%s enclosure, %s: %,.2f", enclosure.name(), size, enclosurePrice());
     }
 }
